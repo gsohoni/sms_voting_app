@@ -32,4 +32,8 @@ describe Campaign do
     @campaign_one.votes.count == (@campaign_one.valid_votes.count + @campaign_one.invalid_votes.count) 
   end
   
+  it 'has many votes' do
+    @campaign.should respond_to(:votes)
+  end
+  
 end

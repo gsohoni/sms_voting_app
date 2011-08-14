@@ -27,4 +27,13 @@ describe Vote do
     @vote.campaign = @campaign
     @vote.should  be_valid
   end
+  
+  it 'belongs to candidate' do
+    @vote.should respond_to(:candidate)
+  end
+  
+  it 'belongs to campaign' do
+    @vote.should respond_to(:campaign)
+  end
+  
 end

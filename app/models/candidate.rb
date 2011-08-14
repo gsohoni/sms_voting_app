@@ -5,6 +5,6 @@ class Candidate < ActiveRecord::Base
   belongs_to  :campaign
   
   def campaign_score(campaign)
-    campaign.valid_votes.where(:candidate_id => self)
+    campaign.valid_votes.where(:candidate_id => self).count
   end
 end

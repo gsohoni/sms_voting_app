@@ -9,7 +9,7 @@
 	<% for candidate in @campaign.candidates %>
 	<tr class="<%= cycle('odd', 'even')%>">
 		<td class='emphasis'><%= candidate.name %></td>
-		<td><%= candidate.campaign_score(@campaign).count %></td>
+		<td><%= candidate.campaign_score(@campaign) %></td>
 	</tr>
 	<% end %>
 	<tr>
