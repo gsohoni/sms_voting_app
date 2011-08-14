@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: 
+    campaign_id: 1
+    candidate_id: 1
+    validity: 'during'
+    
+two: 
+    campaign_id: 1
+    candidate_id: 1
+    validity: 'during'
+
+three:
+    campaign_id: 1
+    candidate_id: 2
+    validity: 'pre'
+    
+four:
+    campaign_id: 1
+    candidate_id: 2
+    validity: 'post'
+    
+five:
+    campaign_id: 2
+    candidate_id: 1
+    validity: 'during'
+    

@@ -1,0 +1,22 @@
+<h1>Campaign details for <strong><%= @campaign.name %></strong></h1>
+
+<table>
+	<% unless @campaign.candidates.empty? %>
+	<tr>
+		<td>Candidate</td>
+		<td>Campaign score</td>
+	</tr>
+	<% for candidate in @campaign.candidates %>
+	<tr class="<%= cycle('odd', 'even')%>">
+		<td class='emphasis'><%= candidate.name %></td>
+		<td><%= candidate.campaign_score(@campaign).count %></td>
+	</tr>
+	<% end %>
+	<tr>
+		<td class='emphasis invalid'>Votes which were not counted</td>
+		<td class='invalid'><%= @campaign.invalid_votes.count %></td>
+	</tr>
+	<% else %>
+		No details are available to show for this campaign.
+	<% end %>
+</table>

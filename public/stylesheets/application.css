@@ -1,0 +1,19 @@
+body {
+	font-family: verdana;
+}
+
+.emphasis {
+	font-style: italic;
+}
+
+.invalid {
+	background-color: #FF9966;
+}
+
+.odd {
+	background-color: #C0C0C0;
+}
+
+.even {
+	background-color: #FFFFFF;
+}

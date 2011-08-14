@@ -1,0 +1,44 @@
+Voting App README:
+
+Environment requirements:
+rails: 3.0.9
+mysql2: 0.2.11
+
+Setup:
+rake db:create - creates mig_voting_development database
+rake db:migrate - creates the tables as per migrations in db/migrate
+rake import:data - import vote data into the database from votes.txt log file
+
+Running the rails app as 'rails s' should run it on port 3000.
+
+1) localhost:3000 - lists all the campaigns imported
+2) Clicking on Show details shows the campaign details:
+	a) campaign name
+	b) candidates with their score (valid votes)
+	c) invalid vote count (depending on validity)
+
+Description:
+
+For keeping the application and data simple and clear, three main data models
+were created.
+
+1) vote
+2) campaign
+3) candidate
+
+Vote model is the most important entity and serves two purposes:
+1) it holds the voting data
+2) it acts as a join model between campaign and candidate
+
+So using the join model vote, we can find the candidates for a given campaign and thus can
+calculate valid and invalid votes.
+
+Every vote belongs to a candidate and a campaign. Votes with valid validity 
+(validity = 'during') are considered for campaign score. Invalid votes are calculated
+per campaign depending upon their invalid validity.
+
+Script for loading the log file data into database is the rake file under lib/tasks/ named import.rake
+On command line, running rake import:data imports the data into the database.
+
+
+Application documentation can be found in doc/app/index.html

@@ -1,0 +1,15 @@
+<h1>Campaign List</h1>
+
+<% unless @campaigns.empty? %>
+	<table>
+		<tr>
+			<th>Campaign</th>
+			<th>Details</th>
+		</tr>
+	<% for campaign in @campaigns %>
+		<tr class="<%= cycle('odd', 'even')%>">
+			<td><%= campaign.name %></td>
+			<td><%= link_to 'Show Details', campaign %></td>
+		</tr>
+	<% end %>
+<% end %>	
