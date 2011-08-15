@@ -16,7 +16,7 @@ describe Candidate do
     @candidate.should be_valid
   end
   
-  it 'has many votes' do
+  it 'belongs to campaign' do
     @candidate.should respond_to(:campaign)
   end
   
