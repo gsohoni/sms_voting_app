@@ -2,6 +2,8 @@ namespace :import do
   desc "import data from log file to database"
   task :data => :environment do
     puts 'Importing data. Please wait.'
+    
+    # to store candidates and campaigns in a hash and avoid unnecessary db hits ..
     candidates = {}
     campaigns = {}
     
@@ -18,6 +20,7 @@ namespace :import do
         # vote_identifier is the epoch time value
         vote_identifier = attrs[0]
 
+        # create candidates and campaigns and store them in hash when not found
         unless candidates.keys.include? voting_details['Choice']
           candidate = Candidate.create!(:name => voting_details['Choice'])
           candidates[voting_details['Choice']] = candidate
